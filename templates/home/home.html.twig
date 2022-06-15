@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Welcome to your Todo List!{% endblock %}
+
+{% block body %}
+
+    <style>
+        .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+        .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+    </style>
+
+    <div class="example-wrapper">
+        <h1>Welcome to your Todo List!</h1>
+        <p>Here you can create new Tasks, keep track of them, and mark them as Complete when they're done.</p>
+        <p>Each task has a name and a status. New tasks will have a status of 'Incomplete', although you can mark them as 'Complete' later.Get started by creating a new Task</p>
+        <a href="/list">New list</a>
+
+        <div id='postWithPicture'>
+            {# for= boucle, list=nom de la list appeler a chaque boucle  #}
+            {% for list in lists %} 
+                <article>
+                {# vas afficher la list et le nom associer a chaque tour de fait #}
+                {{ list.name }}
+                    {# <h2>{{ TodoList.name }}</h2> #}
+                    <a href="{{ path('app_task', { 'id' : list.id }) }}">Voir</a>
+                </article>
+            {% endfor %}
+        </div>
+    </div>
+
+{% endblock %}

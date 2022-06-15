@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello StoryController!{% endblock %}
+
+{% block body %}
+    <section id='seeOneStory'>
+        <div id='postWithPicture'>
+            {# for= boucle, list=nom de la list appeler a chaque boucle  #}
+            {% for list in lists %} 
+                <article>
+                {# vas afficher la list et le nom associer a chaque tour de fait #}
+                {{ list.name }}
+                    {# <h2>{{ TodoList.name }}</h2> #}
+                </article>
+            {% endfor %}
+        </div>
+    </section>
+{% endblock %}
